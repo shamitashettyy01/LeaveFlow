@@ -14,15 +14,15 @@ function Login({onLogin}) {
     setMessage('');
     setLoading(true);
 
-    try {
-     const response = await axios.post(
-  `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/auth/login`,
-  {
-    email: email.trim().toLowerCase(),
-    password: password,
-    role: role.toLowerCase()
-  }
-);
+try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL || 'https://leaveflow-mher.onrender.com'}/api/auth/login`,
+        {
+          email: email.trim().toLowerCase(),
+          password: password,
+          role: role.toLowerCase()
+        }
+      );
 
       localStorage.setItem('token', response.data.token);
       localStorage.setItem(
