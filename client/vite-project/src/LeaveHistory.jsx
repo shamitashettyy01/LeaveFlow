@@ -11,7 +11,7 @@ function LeaveHistory() {
         const token = localStorage.getItem('token');
 
         const response = await axios.get(
-          'http://127.0.0.1:5000/api/leaves/my-leaves',
+          `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/leaves/my-leaves`,
           {
             headers: {
               Authorization: `Bearer ${token}`

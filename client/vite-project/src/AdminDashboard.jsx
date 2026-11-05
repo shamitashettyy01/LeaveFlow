@@ -12,7 +12,7 @@ function AdminDashboard() {
       const token = localStorage.getItem('token');
 
       const response = await axios.get(
-        'http://127.0.0.1:5000/api/leaves/all',
+        `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/leaves/all`,
         {
           headers: {
             Authorization: `Bearer ${token}`
